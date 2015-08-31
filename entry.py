@@ -1,4 +1,6 @@
 from __future__ import division
+import numpy as np
+import matplotlib.pyplot as plt
 from theano import *
 import theano.tensor as T
 from theano import function
@@ -24,8 +26,7 @@ ll.eval({z:1})
 l.eval({z:0})
 ll.eval({z:0})
 
-##flip around Y axis
-import numpy as np
+##demo flip around Y axis
 # for i in np.arange(1,11,1):
 #     print l.eval({z:-i})
 #
@@ -37,7 +38,6 @@ def outV(tx):
         out.append(ll.eval({z:i}))
     return np.array(out)
 
-import matplotlib.pyplot as plt
 txx = np.arange(0,7,.5)
 neg_txx = -1 * txx
 nxx = len(txx)
