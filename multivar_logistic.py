@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from theano import *
 import theano.tensor as T
 from theano import function
