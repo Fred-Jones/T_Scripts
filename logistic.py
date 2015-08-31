@@ -37,6 +37,11 @@ def outV(tx):
     for i in tx:
         out.append(ll.eval({z:i}))
     return np.array(out)
+def outZ(x):
+    out = []
+    for i in x:
+        out.append(ll.eval({z:i+5}))
+    return np.array(out)
 
 txx = np.arange(0,7,.5)
 neg_txx = -1 * txx
