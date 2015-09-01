@@ -12,15 +12,17 @@ logistic = 1/(1+T.exp(-z))
 
 f = function([X, theta], logistic)
 
-XX = np.arange(1,6,1)
-tt = np.arange(0,2.5,.1)
+XX = np.arange(0,5,1)
+tt = np.arange(0,.25,.01)
 tt.shape = (5,5)
 
 a = f(XX, tt)
-print 'computing z:\n', tt.T, '*',  XX
+print 'computed z:\n', tt.T, '*',  XX
+print 'z: \n', np.dot(tt.T, XX)
 print 'Activations a:\n', a
 
-# print tt
-# print tt.T
-# print np.dot(tt.T,XX)
-# print np.dot(XX, tt.T)
+
+import matplotlib.pyplot as plt
+xplt = np.arange(-len(a),len(a)+1)
+plt.plot(xplt, logistic.eval({z:xplt}))
+plt.show()
