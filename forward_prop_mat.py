@@ -22,7 +22,9 @@ print 'z: \n', np.dot(tt.T, XX)
 print 'Activations a:\n', a
 
 
-import matplotlib.pyplot as plt
-xplt = np.arange(-len(a),len(a)+1)
-plt.plot(xplt, logistic.eval({z:xplt}))
-plt.show()
+# import matplotlib.pyplot as plt
+# xplt = np.arange(-len(a),len(a)+1)
+# plt.plot(xplt, logistic.eval({z:xplt}))
+# plt.show()
+# theano.printing.pydotprint()
+theano.printing.pydotprint(f, outfile='/Users/sethmartinez/desktop/Proj_F2015/T_Script/graphs/out.png')
